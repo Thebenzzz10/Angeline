@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery with Descriptions</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Rock+Salt&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #FFB6C1; /* Light pink background color */
+            font-family: 'Rock Salt', cursive; /* Fun font for body text */
+        }
+        .card-img-top {
+            height: 200px;
+            object-fit: cover;
+        }
+        h1 {
+            font-family: 'Orbitron', sans-serif; /* Futuristic font for headings */
+            font-size: 3rem;
+            color: #ff69b4; /* Hot pink for heading */
+            text-shadow: 2px 2px 4px #000000; /* Shadow for more impact */
+        }
+        .card-text {
+            font-family: 'Rock Salt', cursive; /* Fun font for card text */
+            font-size: 1.2rem;
+            color: #ff4500; /* OrangeRed for card text */
+        }
+        .card-body {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+        .card-body.show {
+            display: block;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-12 text-center mb-4">
+                <h1>Angeline Marie FeBenito Clemente</h1>
+                <p>
+                    I just wanted to take a moment to tell you how much you mean to me. Every time I see you, I can't help but feel incredibly lucky to have you in my life. Your smile lights up my day, and your kindness and warmth make everything better.
+                    I love how we can talk for hours about anything and everything, and how just being with you feels like home. You inspire me to be the best version of myself, and I cherish every moment we share together.
+                    Thank you for being you, and for letting me be a part of your world. I love you more than words can say.
+                    With all my heart.
+                </p>
+                <p>
+                    click the photo:
+                </p>
+            </div>
+        </div>
+        <audio autoplay loop>
+            <source src="Palagi.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card" onclick="toggleCardBody(this)">
+                    <img src="image1.jpeg" class="card-img-top" alt="A beautiful photo of Angeline with a cute mirror shot">
+                    <div class="card-body">
+                        <p class="card-text">This is one of my favorite photos of you because you look so beautiful and cute. The mirror shot here is just perfect.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card" onclick="toggleCardBody(this)">
+                    <img src="image2.jpeg" class="card-img-top" alt="Angeline in pink, looking adorable">
+                    <div class="card-body">
+                        <p class="card-text">You look so adorable in pink. Pink symbolizes love, nurture, and compassion, and evokes feelings of comfort, warmth, and hope.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card" onclick="toggleCardBody(this)">
+                    <img src="image3.jpeg" class="card-img-top" alt="A moment captured with Angeline, taken at a time of fun">
+                    <div class="card-body">
+                        <p class="card-text">I missed taking photos of you. This is from a time you said, "Let's take one more before the battery runs out." It’s cute how comfortable you’ve become with these moments, compared to when you were shy.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card" onclick="toggleCardBody(this)">
+                    <img src="image4.jpeg" class="card-img-top" alt="A memorable photo of Angeline, reminding me to stay happy">
+                    <div class="card-body">
+                        <p class="card-text">While making this, I was deeply in love. I just want you to be happy, and this photo always reminds me to stay joyful and content.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card" onclick="toggleCardBody(this)">
+                    <img src="image5.jpeg" class="card-img-top" alt="Another cherished photo of Angeline">
+                    <div class="card-body">
+                        <p class="card-text">You like tulips, right? This is the best I can give you right now, but soon I'll give you real ones. I want you to be happy in your life, without conflicts, without pain, and without overthinking.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card" onclick="toggleCardBody(this)">
+                    <img src="image6.jpeg" class="card-img-top" alt="Another cherished photo of Angeline">
+                    <div class="card-body">
+                        <p class="card-text">This was a time when it was really late and you hadn't eaten yet. You were almost getting sick because you hadn't eaten. So, even though it was raining, I came to you, especially if there are things you need.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card" onclick="toggleCardBody(this)">
+                    <img src="image7.png" class="card-img-top" alt="Another cherished photo of Angeline">
+                    <div class="card-body">
+                        <p class="card-text">And this is your craving that I gave you because you deserve it. You work really hard, and I want to help you with small things and make you happy with little things. I will treat you like a queen, not just a princess. That's why I'm happy to give you everything that makes you happy.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function toggleCardBody(card) {
+            var cardBody = card.querySelector('.card-body');
+            cardBody.classList.toggle('show');
+        }
+    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

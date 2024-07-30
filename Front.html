@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Front Page</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #282c34; /* Dark background color */
+            margin: 0;
+            color: #ffffff; /* White text color */
+            text-align: center;
+        }
+        .title-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .title {
+            font-size: 48px;
+            font-weight: bold;
+            margin: 0;
+            background: linear-gradient(90deg, transparent, pink, transparent);
+            background-size: 200% 100%;
+            color: transparent; /* Hide default text color */
+            -webkit-background-clip: text; /* Apply gradient to text */
+            background-clip: text; /* Apply gradient to text */
+            animation: slide 10s linear infinite;
+        }
+        .title + .title {
+            font-size: 48px;
+            font-weight: bold;
+            margin: 0;
+            background: linear-gradient(90deg, transparent, pink, transparent);
+            background-size: 200% 100%;
+            color: transparent; /* Hide default text color */
+            -webkit-background-clip: text; /* Apply gradient to text */
+            background-clip: text; /* Apply gradient to text */
+            animation: slide 10s linear infinite;
+        }
+        @keyframes slide {
+            0% {
+                background-position: 200% 0;
+            }
+            100% {
+                background-position: -200% 0;
+            }
+        }
+        .subtitle {
+            font-size: 24px;
+            margin-bottom: 40px;
+        }
+        .created-by {
+            margin-top: 40px;
+            font-size: 16px;
+        }
+        .btn-custom {
+            background-color: #007bff; /* Custom button color */
+            border: none;
+            color: #ffffff; /* White text color */
+            text-decoration: none; /* Remove underline from link */
+            display: inline-block; /* Allow padding */
+            padding: 10px 20px; /* Add padding */
+            border-radius: 5px; /* Rounded corners */
+        }
+        .btn-custom:hover {
+            background-color: #0056b3; /* Darker button color on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="title-container">
+            <div class="title">
+                Hello
+            </div>
+            <div class="title">
+                There
+            </div>
+        </div>
+        <div class="subtitle">
+            I have somethin' for u!!
+        </div>
+        <a href="Ange.html" class="btn btn-custom">Click Me!</a>
+        <div class="created-by">
+            Created by Renier Ben Almario
+        </div>
+    </div>
+    <audio autoplay loop>
+        <source src="Palagi.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Tulip Flower</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 110vh;
+            background-color: #000000; /* Dark background */
+            margin: 0; /* Fix margin issue */
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .description {
+            color: #ffffff; /* White text color */
+            font-size: 24px; /* Larger font size for description */
+            margin-bottom: 10px; /* Space between description and flowers */
+        }
+        .tulip-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px; /* Space between tulips */
+            margin-bottom: 20px; /* Space between tulips and buttons */
+        }
+        .tulip {
+            position: relative;
+            width: 103px;
+            height: 200px;
+            animation: sway 3s ease-in-out infinite;
+            cursor: pointer;
+        }
+        .tulip .stem {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 10px;
+            height: 100px;
+            background-color: #006400; /* Dark green stem */
+            transform: translateX(-50%);
+        }
+        .tulip .leaf {
+            position: absolute;
+            bottom: 30px;
+            width: 60px;
+            height: 20px;
+            background-color: #228B22; /* Forest green leaves */
+            border-radius: 50px 50px;
+        }
+        .tulip .leaf.left {
+            left: -20px; /* Adjusted for connection */
+            transform: rotate(-40deg);
+        }
+        .tulip .leaf.right {
+            right: -20px; /* Adjusted for connection */
+            transform: rotate(40deg);
+        }
+        .tulip .petal {
+            position: absolute;
+            bottom: 100px;
+            width: 32px;
+            height: 90px;
+            background-color: #ff69b4; /* Hot pink petals */
+            border-radius: 200px 200px;
+            transform-origin: bottom center;
+        }
+        .tulip .petal.left {
+            left: 50px;
+            transform: rotate(-30deg);
+        }
+        .tulip .petal.right {
+            right: 50px;
+            transform: rotate(30deg);
+        }
+        .tulip .petal.center {
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+        }
+        .tulip .petal.inner-left {
+            left: 50px;
+            transform: rotate(-15deg);
+            z-index: 2;
+        }
+        .tulip .petal.inner-right {
+            right: 50px;
+            transform: rotate(15deg);
+            z-index: 2;
+        }
+        @keyframes sway {
+            0%, 100% {
+                transform: rotate(0deg);
+            }
+            50% {
+                transform: rotate(5deg);
+            }
+        }
+        .response-btns {
+            display: flex;
+            justify-content: center;
+            position: relative;
+            margin-top: 20px; /* Positioning below the flowers */
+        }
+        .response-btns .btn {
+            margin: 0 10px; /* Space between the buttons */
+            color: #ffffff; /* White text color */
+        }
+        .btn-success {
+            background-color: #28a745; /* Bright green */
+            border: none;
+        }
+        .btn-success:hover {
+            background-color: #218838; /* Darker green on hover */
+        }
+        .btn-danger {
+            background-color: #dc3545; /* Bright red */
+            border: none;
+            position: relative; /* Needed for position adjustment */
+        }
+        .btn-danger:hover {
+            background-color: #c82333; /* Darker red on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="description">
+            This is a little effort for you my Angeline. If this flower is not like tulip im so sorry but I tried my best kasi alam ko gusto mo yung tulip. I want you to make happy in this August 1 kahit hindi mo ako jowa. I want to make you some smile on your face so ayun ginawa ko to para sayo. I like you so much Angeline and i want to be with you in the first day. Thank you for make my day and kaya ko pa pala mag mahal at kaya ko pa pala mag effort for the girl I want. I can be with you forever and make you a happies girl?
+        </div>
+        <div class="description">
+            Click on any tulip to change its color.
+        </div>
+        <div class="tulip-container">
+            <div class="tulip">
+                <div class="stem"></div>
+                <div class="leaf left"></div>
+                <div class="leaf right"></div>
+                <div class="petal left"></div>
+                <div class="petal right"></div>
+                <div class="petal center"></div>
+                <div class="petal inner-left"></div>
+                <div class="petal inner-right"></div>
+            </div>
+            <div class="tulip">
+                <div class="stem"></div>
+                <div class="leaf left"></div>
+                <div class="leaf right"></div>
+                <div class="petal left"></div>
+                <div class="petal right"></div>
+                <div class="petal center"></div>
+                <div class="petal inner-left"></div>
+                <div class="petal inner-right"></div>
+            </div>
+            <div class="tulip">
+                <div class="stem"></div>
+                <div class="leaf left"></div>
+                <div class="leaf right"></div>
+                <div class="petal left"></div>
+                <div class="petal right"></div>
+                <div class="petal center"></div>
+                <div class="petal inner-left"></div>
+                <div class="petal inner-right"></div>
+            </div>
+        </div>
+        <div class="response-btns">
+            <a href="Next.html" class="btn btn-success">Yes</a>
+            <a id="noButton" class="btn btn-danger">No</a>
+        </div>
+    </div>
+    <audio autoplay loop>
+        <source src="Palagi.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <script>
+        const tulips = document.querySelectorAll('.tulip');
+        tulips.forEach(tulip => {
+            tulip.addEventListener('click', () => {
+                tulip.classList.toggle('colorful');
+                const petals = tulip.querySelectorAll('.petal');
+                petals.forEach(petal => {
+                    petal.style.backgroundColor = getRandomColor();
+                });
+            });
+        });
+
+        function getRandomColor() {
+            const letters = '0123456789ABCDEF';
+            let color = '#';
+            for (let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
+        const noButton = document.getElementById('noButton');
+        noButton.addEventListener('click', () => {
+            moveButtonRandomly(noButton);
+        });
+
+        function moveButtonRandomly(button) {
+            for (let i = 0; i < 3; i++) {
+                const randomX = Math.floor(Math.random() * window.innerWidth) - button.offsetWidth;
+                const randomY = Math.floor(Math.random() * window.innerHeight) - button.offsetHeight;
+                button.style.position = 'absolute';
+                button.style.left = `${randomX}px`;
+                button.style.top = `${randomY}px`;
+            }
+        }
+    </script>
+</body>
+</html>
